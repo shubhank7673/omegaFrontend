@@ -1,0 +1,80 @@
+.sidebar {
+  font-family: "Open Sans", sans-serif;
+}
+.sidebarContainer{
+  font-family: "Open Sans", sans-serif;
+}
+.avatarHolder {
+  justify-content: center;
+  text-align: center;
+}
+.avatar {
+  height: 100px;
+  width: 100px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bolder;
+  display: flex;
+  color: black;
+}
+.sidebarLink{
+  font-size: 14px;
+  text-transform: capitalize;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+.sidebarItemContainer{
+  transition: 0.3s all;
+  /* margin: 0px 15px; */
+  /* border-radius: 30px; */
+  /* font-size: 12px; */
+}
+.sidebarItemContainer img{
+  margin-right: 10px;
+}
+.sidebarItemContainer:hover img{
+  /* fill: black; */
+  display: none;
+}
+.sidebarItemContainer:hover{
+  color: black;
+  background:white;
+}
+hr {
+  margin: 0px;
+  border: 0.5px solid rgba(255, 255, 255, 0.466);
+}
+.logo {
+  font-size: 23px;
+  margin: 10px;
+  /* font-weight:bold; */
+}
+.element a {
+  padding: 10px 20px;
+}
+.content {
+  float: right;
+  width: calc(100vw - 251px);
+  border: 1px solid black;
+}
+@media only screen and (max-width: 1000px) {
+  .sidebar {
+    display: none;
+  }
+  .content {
+    width: 100vw;
+  }
+}
+.togglebtn {
+  background: none;
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+}
