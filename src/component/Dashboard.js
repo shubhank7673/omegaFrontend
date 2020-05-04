@@ -132,7 +132,7 @@ export default class Dashboard extends React.Component {
           <div className={classes.innerItem}>
             <img
               className={classes.innerIcon}
-              src={require("../images/download.png")}
+              src={require("../images/downloads.png")}
             ></img>
             <h1>10</h1>
             <h4>Downloads</h4>

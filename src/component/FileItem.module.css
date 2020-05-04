@@ -1,14 +1,17 @@
 .fileItem {
-  height: 300px;
-  width: 300px;
-  /* width: fit-content;
-    height: fit-content; */
+  height: 230px;
+  width: 230px;
   margin: 10px;
   display: inline-block;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+  /* border: 1px solid rgba(0, 0, 0, 0.25); */
+  border-radius: 15px;
   overflow: hidden;
-  /* box-shadow: 0px 0px 5px rgba(0,0,0,0.5); */
+  cursor: pointer;
+  transition: 0.3s all;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+.fileItem:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 img {
   border: 0px;
@@ -16,11 +19,15 @@ img {
 .icon {
   width: 100%;
   height: 60%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.25); */
   display: flex;
   justify-content: center;
   align-items: center;
   /* border-bottom: 1px solif rgba(0, 0, 0, 0.25); */
+}
+.icon img{
+  height: 70px;
+  width: 70px;
 }
 .fileInfo {
   height: 40%;
@@ -33,6 +40,7 @@ img {
   display: inline-block;
   width: 40px;
   height: 24px;
+  margin: 0px 5px;
 }
 
 .switch input {
@@ -86,4 +94,32 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+.innerBtn {
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0px 10px;
+  height: 30px;
+  width: 30px;
+  /* padding-bottom: 10px; */
+  /* border: 1px solid black; */
+}
+.innerBtn img {
+  height: 25px;
+  width: 25px;
+  transition: 0.3s all;
+}
+.innerBtn img:hover {
+  height: 30px;
+  width: 30px;
+}
+.controlsDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /* background: #EAECEE; */
+  /* border: 1px solid black; */
 }

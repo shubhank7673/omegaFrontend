@@ -1,24 +1,36 @@
 import React, { Component } from "react";
 import axios from "axios";
 import classes from "./Files.module.css";
-import FileItem from "../container/FileItem";
+import FileItem from "./FileItem";
 class Files extends Component {
   constructor(props) {
     super(props);
-    this.state = { files: [] };
+    this.state = { files: [], reload: false };
   }
   makeItems = () => {
-    console.log(this.state.files)
+    console.log(this.state.files);
     const x = this.state.files.map(item => {
-      return <FileItem item={item}></FileItem>;
-    })
+      return (
+        <FileItem
+          item={item}
+        ></FileItem>
+      );
+    });
     return x;
-  }
+  };
   componentWillMount() {
     axios
-      .post("http://localhost:5000/getuserfiles", {
-        email: "shubhank7673@gmail.com"
-      })
+      .post(
+        "http://localhost:5000/getuserfiles",
+        {
+          email: "shubhank7673@gmail.com"
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token").toString()
+          }
+        }
+      )
       .then(res => {
         console.log(res.data);
         this.setState({ files: res.data.userFiles });
@@ -28,9 +40,7 @@ class Files extends Component {
   render() {
     return (
       <>
-        <div className={classes.filesContainer}>
-          {this.makeItems()}
-        </div>
+        <div className={classes.filesContainer}>{this.makeItems()}</div>
       </>
     );
   }
