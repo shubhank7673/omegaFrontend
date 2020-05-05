@@ -7,6 +7,7 @@ import Logout from "./container/Logout";
 import Signup from "./component/Signup";
 import { PassThrough } from "stream";
 import Graph from "./component/Dashboard";
+import axios from "axios";
 class app extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +18,7 @@ class app extends Component {
   resetState = (newState, newPath) => {
     this.setState(newState);
   };
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     if (localStorage.getItem("token")) {
       this.setState({ loggedIn: true });
     }

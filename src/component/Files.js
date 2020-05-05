@@ -18,12 +18,12 @@ class Files extends Component {
     });
     return x;
   };
-  componentWillMount() {
+  componentDidMount() {
     axios
       .post(
         "http://localhost:5000/getuserfiles",
         {
-          email: "shubhank7673@gmail.com"
+          email: "none"
         },
         {
           headers: {

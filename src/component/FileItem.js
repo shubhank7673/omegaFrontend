@@ -77,16 +77,29 @@ export default class FileItem extends React.Component {
     this.setState({ copied: true });
   };
   handleDownloadClick = () => {
-    axios.get(
-      `http://localhost:5000/privatedownload/${this.state.serverName}`,
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`
-        }
+    // axios
+    //   .get(`http://localhost:5000/privatedownload/${this.state.serverName}`, {
+    //     headers: {
+    //       Authorization: `Bearer ${localStorage.getItem("token")}`
+    //     }
+    //   })
+    //   .then(res => {})
+    //   .catch(err => console.log(err));
+    axios({
+      url: `http://localhost:5000/privatedownload/${this.state.serverName}`,
+      method: "GET",
+      responseType: "blob",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
       }
-    )
-    .then((res) => {})
-    .catch(err => console.log(err));
+    }).then(response => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", `${this.props.item.fullName}`); //or any other extension
+      document.body.appendChild(link);
+      link.click();
+    });
   };
   render() {
     console.log(this.props.item.serverName);
