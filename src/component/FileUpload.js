@@ -9,12 +9,16 @@ export default class FileUpload extends React.Component {
     this.state = {
       file: null,
       error: false,
-      redirect: false
+      redirect: false,
+      fileName: "Select file"
     };
   }
   handleInputChange = e => {
     console.log(e.target.files[0]);
-    this.setState({ file: e.target.files[0] });
+    this.setState({
+      fileName: e.target.files[0].name,
+      file: e.target.files[0]
+    });
   };
   handleSubmit = () => {
     const data = new FormData();
@@ -39,15 +43,27 @@ export default class FileUpload extends React.Component {
   render() {
     return (
       <>
-        {this.state.redirect ? <Redirect to="/files"></Redirect> : null}
-        {this.state.error ? <p>some error occured while uploading</p> : null}
-        <input
-          type="file"
-          onChange={this.handleInputChange}
-          name="file"
-          className={classes.fileInput}
-        ></input>
-        <button onClick={this.handleSubmit}>Upload</button>
+        <div style={{textAlign:"center"}}><h1>Upload file</h1></div>
+        <div className={classes.fileUploadDiv}>
+          {this.state.redirect ? <Redirect to="/files"></Redirect> : null}
+          {this.state.error ? <p>some error occured while uploading</p> : null}
+          <input
+            id="file"
+            type="file"
+            onChange={this.handleInputChange}
+            name="file"
+            className={classes.fileInput}
+            style={{ display: "none" }}
+          ></input>
+          <label className={classes.fileInput} for="file">
+            {this.state.fileName}
+            {/* <button >upl</button> */}
+          </label>
+          {/* <div className={classes.break}></div> */}
+          <button className={classes.uploadBtn} onClick={this.handleSubmit}>
+            Upload
+          </button>
+        </div>
       </>
     );
   }

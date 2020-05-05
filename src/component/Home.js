@@ -38,7 +38,7 @@ class Home extends React.Component {
         </SidebarItem>
       </div>,
       <div className={sclass.sidebarItemContainer}>
-        <SidebarItem href="/dashboard" textAlign="center">
+        <SidebarItem href="/" textAlign="center">
           <div className={sclass.sidebarLink}>Dashboard</div>
         </SidebarItem>
       </div>,
@@ -74,7 +74,7 @@ class Home extends React.Component {
             }}
           >
             <Switch>
-              <Route path="/dashboard">
+              <Route path="/" exact>
                 <Dashboard></Dashboard>
               </Route>
               <Route path="/profile">

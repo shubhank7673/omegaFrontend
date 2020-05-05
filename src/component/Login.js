@@ -27,7 +27,7 @@ class Login extends React.Component {
           localStorage.setItem("token", res.data.token);
           let parentState = { ...this.props.parentState };
           parentState.loggedIn = true;
-          this.props.history.push("/dashboard");
+          this.props.history.push("/");
           this.props.resetParentState(parentState, "/");
         } else {
           this.setState({ errorLogginIn: true });
