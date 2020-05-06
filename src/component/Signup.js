@@ -6,8 +6,7 @@ class Signup extends React.Component {
     super(props);
     this.state = {
       email: "",
-      firstname: "",
-      lastname: "",
+      name: "",
       password: "",
       error: false,
       redirect: false,
@@ -56,16 +55,16 @@ class Signup extends React.Component {
           type="text"
           value={this.state.firstname}
           onChange={this.handleChange}
-          name="firstname"
+          name="name"
           placeholder="firstname"
         ></input>
-        <input
+        {/* <input
           type="text"
           value={this.state.lastname}
           onChange={this.handleChange}
           name="lastname"
           placeholder="lastname"
-        ></input>
+        ></input> */}
         <input
           type="password"
           value={this.state.password}

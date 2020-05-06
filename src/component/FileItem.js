@@ -13,7 +13,9 @@ export default class FileItem extends React.Component {
       copied: false,
       redirect: false,
       display: "inlineBlock",
-      serverName: this.props.item.serverName
+      serverName: this.props.item.serverName,
+      deleteImg: "delete.png",
+      downloadImg: "download.png"
     };
   }
   handerChange = e => {
@@ -45,7 +47,8 @@ export default class FileItem extends React.Component {
     this.setState({ extpath });
   }
   handleDeleteClick = () => {
-    console.log(this.props.item.serverName);
+    // console.log(this.props.item.serverName);
+    this.setState({ deleteImg: "loading.gif" });
     axios
       .post(
         "http://localhost:5000/filedelete",
@@ -85,6 +88,7 @@ export default class FileItem extends React.Component {
     //   })
     //   .then(res => {})
     //   .catch(err => console.log(err));
+    this.setState({ downloadImg: "loading.gif" });
     axios({
       url: `http://localhost:5000/privatedownload/${this.state.serverName}`,
       method: "GET",
@@ -98,6 +102,7 @@ export default class FileItem extends React.Component {
       link.href = url;
       link.setAttribute("download", `${this.props.item.fullName}`); //or any other extension
       document.body.appendChild(link);
+      this.setState({ downloadImg: "download.png" });
       link.click();
     });
   };
@@ -155,14 +160,14 @@ export default class FileItem extends React.Component {
                 onClick={this.handleDeleteClick}
                 className={classes.innerBtn}
               >
-                <img src={require("../images/delete.png")}></img>
+                <img src={require(`../images/${this.state.deleteImg}`)}></img>
               </button>
               <button
                 title={"Download"}
                 onClick={this.handleDownloadClick}
                 className={classes.innerBtn}
               >
-                <img src={require("../images/download.png")}></img>
+                <img src={require(`../images/${this.state.downloadImg}`)}></img>
               </button>
             </div>
           </div>

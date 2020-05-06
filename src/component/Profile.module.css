@@ -1,0 +1,62 @@
+.profileContainer {
+  padding: 10px;
+  border-radius: 30px 30px 0px 0px;
+  min-height: 100%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  /* text-align: center; */
+  background: #fff;
+  padding: 10px 30px;
+}
+.innerContainer {
+  display: flex;
+  width: 95%;
+  cursor: pointer;
+  /* border: 1px solid black; */
+  margin: 8px;
+  padding: 0px 15px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  transition: 0.3s all;
+}
+.innerContainer:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+h2 {
+  /* margin: 5px; */
+}
+hr {
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+.editBtn {
+  height: 25px;
+  width: 50px;
+  min-width: fit-content;
+  margin: auto;
+  background: none;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: 0.3s all;
+  outline: none;
+}
+.editBtn:hover {
+  border-color: lightgreen;
+}
+
+input{
+  /* height: fit-content; */
+  outline: none;
+  border:0px;
+  font: inherit;
+  width: 85%;
+}
+button img{
+  height: 15px;
+  width: 15px;
+}

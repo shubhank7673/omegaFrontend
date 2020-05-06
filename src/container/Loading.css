@@ -1,0 +1,66 @@
+html {
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.circle {
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+}
+
+.lg {
+  background-color: #566573;
+  width: 50px;
+  height: 50px;
+}
+
+.md {
+  background-color: #273746;
+  width: 40px;
+  height: 40px;
+}
+
+.sm {
+  background-color: #212f3d;
+  width: 30px;
+  height: 30px;
+}
+
+.smlr {
+  background-color: #1c2833;
+  width: 20px;
+  height: 20px;
+}
+
+#loading {
+  color: #072463;
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin_reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-359deg);
+  }
+}

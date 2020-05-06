@@ -19,9 +19,11 @@ class Login extends React.Component {
     // console.log(this.state.password);
   };
   handleSubmit = () => {
+    console.log("in");
     axios
       .post("http://localhost:5000/login", this.state)
       .then(res => {
+        console.log(res.data);
         if (res.data.userFound && res.data.correctPassword) {
           console.log(res.data.token);
           localStorage.setItem("token", res.data.token);

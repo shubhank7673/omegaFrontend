@@ -6,7 +6,7 @@ const Home = props => {
   return (
     <>
       <div className={home.body}>
-        <div className={bg.area}>
+        {/* <div className={bg.area}>
           <ul className={bg.circles}>
             <li></li>
             <li></li>
@@ -19,7 +19,7 @@ const Home = props => {
             <li></li>
             <li></li>
           </ul>
-        </div>
+        </div> */}
         <div className={home.halfcoloured}>Omega</div>
         <div className={home.bottom_div}>
           <div className={home.login}>
